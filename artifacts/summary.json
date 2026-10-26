@@ -1,0 +1,117 @@
+{
+  "created_at_utc": "2026-10-25T23:56:09.402123+00:00",
+  "source": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
+  "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI. https://doi.org/10.24432/C5W894",
+  "license": "CC BY 4.0",
+  "data_sha256": "e03de4ee4ef4dc376ac6e04bf829673c6269e8eba5c60fa121640fa2f829504f",
+  "raw_rows": 17379,
+  "missing_hours": 165,
+  "eligible_rows": 16818,
+  "excluded_observed_rows": 561,
+  "feature_count": 17,
+  "splits": {
+    "train": {
+      "start": "2011-01-08 00:00:00",
+      "end": "2012-05-30 23:00:00",
+      "rows": 11772
+    },
+    "calibration": {
+      "start": "2012-05-31 00:00:00",
+      "end": "2012-09-13 02:00:00",
+      "rows": 2523
+    },
+    "test": {
+      "start": "2012-09-13 03:00:00",
+      "end": "2012-12-31 23:00:00",
+      "rows": 2523
+    }
+  },
+  "metrics": {
+    "Gradient boosting": {
+      "mae": 33.989522502538584,
+      "rmse": 55.40757131998715,
+      "r2": 0.9335176522860442
+    },
+    "Previous hour": {
+      "mae": 81.50297265160523,
+      "rmse": 125.66229776534831,
+      "r2": 0.6580377921490055
+    },
+    "Previous week": {
+      "mae": 66.65953230281411,
+      "rmse": 112.95878399087688,
+      "r2": 0.7236826620814432
+    },
+    "Without weather": {
+      "mae": 30.912503464124125,
+      "rmse": 50.372229444659816,
+      "r2": 0.9450521802487456
+    }
+  },
+  "nominal_coverage": 0.9,
+  "interval_radius": 78.7509682032861,
+  "test_coverage": 0.8874355925485533,
+  "average_interval_width": 142.4868146230217,
+  "parameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": false,
+    "interaction_cst": null,
+    "l2_regularization": 1.0,
+    "learning_rate": 0.06,
+    "loss": "poisson",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 240,
+    "max_leaf_nodes": 23,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": 42,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "backtests": [
+    {
+      "fold": 1,
+      "train_end": "2011-05-22 10:00:00",
+      "test_start": "2011-05-23 11:00:00",
+      "test_end": "2011-09-25 18:00:00",
+      "rows": 2943,
+      "mae": 32.7325073540758,
+      "rmse": 50.18605974371013,
+      "r2": 0.8868548120997253,
+      "previous_hour_mae": 62.72239211688753,
+      "previous_week_mae": 46.84199796126401
+    },
+    {
+      "fold": 2,
+      "train_end": "2011-09-24 18:00:00",
+      "test_start": "2011-09-25 19:00:00",
+      "test_end": "2012-01-27 22:00:00",
+      "rows": 2943,
+      "mae": 21.643604462355533,
+      "rmse": 34.090033930305935,
+      "r2": 0.9278545282413172,
+      "previous_hour_mae": 50.26673462453279,
+      "previous_week_mae": 50.64865783214407
+    },
+    {
+      "fold": 3,
+      "train_end": "2012-01-26 22:00:00",
+      "test_start": "2012-01-27 23:00:00",
+      "test_end": "2012-05-30 23:00:00",
+      "rows": 2943,
+      "mae": 36.63330214605383,
+      "rmse": 63.24296932469445,
+      "r2": 0.8943311010649562,
+      "previous_hour_mae": 76.37852531430514,
+      "previous_week_mae": 60.269113149847094
+    }
+  ],
+  "evaluation": "Rolling one-hour-ahead. Prior test outcomes become observable before subsequent forecasts. Model weights remain frozen."
+}

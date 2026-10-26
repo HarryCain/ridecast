@@ -1,0 +1,11 @@
+.venv
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.DS_Store
+data/raw/
+artifacts/model.joblib
+artifacts/features.csv
+artifacts/environment.json
+.streamlit/secrets.toml
